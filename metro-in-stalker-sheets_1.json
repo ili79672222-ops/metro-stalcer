@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "title": "Metro in the Zone (working title)",
+    "host": {"slug": "pc-s-t-a-l-k-e-r-shadow-of-chernobyl", "role": "primary"},
+    "companion": {"slug": "pc-metro-exodus", "role": "companion", "folderToken": "{game:pc-metro-exodus}"},
+    "mode": "singleplayer",
+    "license": "MIT",
+    "remixAllowed": true,
+    "version0": "Cordon only; Sidorovich's crate with 3 Metro items"
+  },
+  "sheets": {
+    "items": {
+      "columns": ["id", "name", "kind", "baseStalkerSection", "metroSourceAsset", "damage", "clip", "icon", "sound", "status"],
+      "rows": [
+        {"id": "tikhiy", "name": "Tikhiy", "kind": "weapon", "baseStalkerSection": null, "metroSourceAsset": null, "damage": null, "clip": null, "icon": null, "sound": null, "status": "unverified"},
+        {"id": "kalash", "name": "Kalash", "kind": "weapon", "baseStalkerSection": null, "metroSourceAsset": null, "damage": null, "clip": null, "icon": null, "sound": null, "status": "unverified"},
+        {"id": "gasmask_metro", "name": "Gas mask with filters", "kind": "outfit_helmet", "baseStalkerSection": null, "metroSourceAsset": null, "damage": null, "clip": null, "icon": null, "sound": null, "status": "unverified"}
+      ]
+    },
+    "mechanics": {
+      "columns": ["id", "description", "hookInto", "params", "status"],
+      "rows": [
+        {"id": "filter_timer", "description": "Mask filter lasts N minutes in radiation/chemical zones, swappable", "hookInto": null, "params": {"minutesPerFilter": null}, "status": "unverified"}
+      ]
+    },
+    "world": {
+      "columns": ["id", "level", "npc", "container", "contents", "hookInto", "status"],
+      "rows": [
+        {"id": "sidor_crate", "level": "l01_escape", "npc": "Sidorovich", "container": "crate", "contents": ["tikhiy", "kalash", "gasmask_metro"], "hookInto": null, "status": "unverified"}
+      ]
+    },
+    "sources": {
+      "columns": ["id", "game", "pathPattern", "format", "readMethod", "status"],
+      "rows": [
+        {"id": "exodus_models", "game": "{game:pc-metro-exodus}", "pathPattern": null, "format": null, "readMethod": null, "status": "unverified"},
+        {"id": "exodus_sounds", "game": "{game:pc-metro-exodus}", "pathPattern": null, "format": null, "readMethod": null, "status": "unverified"},
+        {"id": "stalker_gamedata", "game": "{game}", "pathPattern": null, "format": "xray .ltx/.db", "readMethod": null, "status": "unverified"}
+      ]
+    },
+    "launch": {
+      "columns": ["id", "kind", "executable", "args", "env", "status"],
+      "rows": [
+        {"id": "main", "kind": "exe", "executable": null, "args": ["-external"], "env": {"EXODUS_DIR": "{game:pc-metro-exodus}"}, "status": "unverified"}
+      ]
+    }
+  }
+}
